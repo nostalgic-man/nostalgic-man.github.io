@@ -1,0 +1,56 @@
+body{
+  margin:0;
+  font-family:sans-serif;
+  color:white;
+  background:#2b2b2b;
+}
+.container{
+  max-width:900px;
+  margin:3rem auto;
+  padding:2rem;
+}
+input,button,select{
+  padding:0.8rem 1.2rem;
+  border-radius:8px;
+  border:none;
+  margin:0.7rem 0;
+  font-size:1rem;
+}
+button,select{
+  cursor:pointer;
+  background:#b84c4c;
+  color:white;
+}
+button:hover,select:hover{
+  opacity:0.85;
+}
+.title-red{
+  color:#b84c4c;
+  font-size:2rem;
+  margin-bottom:1.5rem;
+}
+.hint{
+  color:#b84c4c;
+  font-style:italic;
+  margin-bottom:2rem;
+}
+.filter{
+  margin-bottom:2rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.filter label{
+  min-width:150px;
+}
+.filter-result{
+  min-width:40px;
+  font-weight:bold;
+}
+ol{
+  margin-top:2rem;
+}
+.page-dark{
+  background:#2b2b2b;
+  color:white;
+}

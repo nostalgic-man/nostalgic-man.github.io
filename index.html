@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bienvenida</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-dark">
+<main class="container" role="main">
+<h1 tabindex="0">Bienvenido</h1>
+<form id="nameForm">
+<label for="fullname">Introduce el nombre completo:</label>
+<input id="fullname" name="fullname" type="text" autocomplete="name" aria-required="true"/>
+<div id="error" role="alert" aria-live="polite" class="error"></div>
+<button type="submit">Enviar</button>
+</form>
+</main>
+
+<script>
+function normalize(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'').replace(/\s+/g,' ').trim();
+}
+document.getElementById('nameForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var n = normalize(document.getElementById('fullname').value);
+  var hasJohanna = n.includes('johanna') || n.includes('johana') || n.includes('joha');
+  if(hasJohanna){
+    window.location.href='game.html';
+  } else {
+    document.getElementById('error').textContent='Nombre incorrecto. Acceso denegado.';
+    document.getElementById('fullname').focus();
+  }
+});
+</script>
+</body>
+</html>
